@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo</title>
+</head>
+<body>
+    <script>
+        //Entradas - Variables
+        const numeroMaximoPosible = 10;
+        let numeroSorteo = Math.floor(Math.random()*numeroMaximoPosible) + 1;
+        console.log(numeroSorteo);
+        let numeroUsuario = 0;
+        let intentos = 1;
+        let cantidadMaximaIntentos = 3;
+        //Proceso
+        while(numeroUsuario != numeroSorteo){
+            numeroUsuario = parseInt(prompt('Digite un número del 1 al 10'));
+            if(numeroUsuario == numeroSorteo){
+                alert(`Acertaste, el número del usuario es: ${numeroUsuario} 
+                .Lo hiciste en ${intentos} ${intentos == 1 ? 'vez':'veces'}`);
+            } else {
+                if(numeroUsuario > numeroSorteo){
+                    alert('El número del sorteo es menor');
+                } else{
+                    alert('El número del sorteo es mayor');
+                }
+                intentos ++;
+                if(intentos > cantidadMaximaIntentos){
+                    alert(`Llego al máximo de intentos ${cantidadMaximaIntentos} 
+                    intentos`);
+                    break;
+                }
+            }
+        }//Fin del While
+        //Salida - Impresion
+        
+        </script>
+</body>
+</html>
